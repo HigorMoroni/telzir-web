@@ -6,8 +6,12 @@ import {
   InputLabel,
   FormControl, 
   Grid, 
-  Button
+  Button,
+  Collapse,
+  Alert,
+  IconButton
 } from '@material-ui/core';
+import { Close as CloseIcon } from '@material-ui/icons';
 
 const SimulationForm = ({ next, getbtn, change, values, estilo, alerta, textalerta, setalerta }) => {
   const classes = estilo;
