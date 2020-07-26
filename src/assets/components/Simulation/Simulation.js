@@ -14,6 +14,8 @@ const Simulation = ({ estilo }) => {
   const [comFaleMais, setComFaleMais] = useState(0);
   const [semFaleMais, setSemFaleMais] = useState(0);
   const [textoBotaoForm, setTextoBotaoForm] = useState('Simular');
+  const [alerta, setAlerta] = useState(false);
+  const [textAlerta, setTextAlerta] = useState('');
 
   const values = {dddOrigem, dddDestino, tempoLigacao, plano}
 
@@ -24,6 +26,21 @@ const Simulation = ({ estilo }) => {
       setSemFaleMais(semFaleMais);
       setComFaleMais(comFaleMais);
     });
+    if (dddOrigem === dddDestino) {
+      setTextAlerta('Selecione um DDD de Destino diferente do DDD de Origem');
+      setAlerta(true);
+      return;
+    }
+    if (dddOrigem !== '11' && dddDestino !== '11') {
+      setTextAlerta('Esse tipo de ligação não é permitido');
+      setAlerta(true);
+      return;
+    }
+    if (dddOrigem === '' || dddDestino === '' || tempoLigacao === '' || plano === '') {
+      setTextAlerta('Não deixe nenhum campo em branco');
+      setAlerta(true);
+      return;
+    }
     setStep(step + 1);
     setTextoBotaoForm('Simular');
   };
@@ -46,6 +63,9 @@ const Simulation = ({ estilo }) => {
         change={handleChange}
         values={values}
         estilo={classes}
+        alerta={alerta}
+        textalerta={textAlerta}
+        setalerta={setAlerta}
       />
     case 2:
       return <SimulationResult

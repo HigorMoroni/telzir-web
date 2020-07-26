@@ -9,7 +9,7 @@ import {
   Button
 } from '@material-ui/core';
 
-const SimulationForm = ({ next, getbtn, change, values, estilo }) => {
+const SimulationForm = ({ next, getbtn, change, values, estilo, alerta, textalerta, setalerta }) => {
   const classes = estilo;
 
   const proximo = (e) => {
@@ -19,6 +19,22 @@ const SimulationForm = ({ next, getbtn, change, values, estilo }) => {
 
   return (
     <Grid container spacing={4} className={classes.form}>
+      <Collapse in={alerta}>
+        <Alert severity="error" action={
+          <IconButton
+            aria-label="close"
+            color="inherit"
+            size="small"
+            onClick={() => {
+              setalerta(false);
+            }}
+          >
+            <CloseIcon fontSize="inherit" />
+          </IconButton>
+        }>
+          {textalerta}
+        </Alert>
+      </Collapse>
       <Grid item xs={12} >
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="origem">DDD de Origem</InputLabel>
