@@ -21,11 +21,12 @@ const Simulation = ({ estilo }) => {
 
   const next = async () => {
     setTextoBotaoForm('Carregando...');
-    await api.post('simulation', values).then((response) => {
-      const [comFaleMais, semFaleMais] = response.data;
-      setSemFaleMais(semFaleMais);
-      setComFaleMais(comFaleMais);
-    });
+    if (dddOrigem === '' || dddDestino === '' || tempoLigacao === '' || plano === '') {
+      setTextAlerta('Não deixe nenhum campo em branco');
+      setAlerta(true);
+      setTextoBotaoForm('Simular');
+      return;
+    }
     if (dddOrigem === dddDestino) {
       setTextAlerta('Selecione um DDD de Destino diferente do DDD de Origem');
       setAlerta(true);
@@ -38,12 +39,11 @@ const Simulation = ({ estilo }) => {
       setTextoBotaoForm('Simular');
       return;
     }
-    if (dddOrigem === '' || dddDestino === '' || tempoLigacao === '' || plano === '') {
-      setTextAlerta('Não deixe nenhum campo em branco');
-      setAlerta(true);
-      setTextoBotaoForm('Simular');
-      return;
-    }
+    await api.post('simulation', values).then((response) => {
+      const [comFaleMais, semFaleMais] = response.data;
+      setSemFaleMais(semFaleMais);
+      setComFaleMais(comFaleMais);
+    });
     setStep(step + 1);
     setTextoBotaoForm('Simular');
   };
