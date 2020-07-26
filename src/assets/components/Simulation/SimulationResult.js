@@ -21,7 +21,7 @@ const SimulationResult = ({ back, values, estilo }) => {
 
   return (
     <Grid container spacing={4} className={classes.form}>
-      <Grid item xs={8} style={{marginLeft: '16%'}}>
+      <Grid item xs={12}>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="caption table">
             <caption style={{textAlign:"center"}}>

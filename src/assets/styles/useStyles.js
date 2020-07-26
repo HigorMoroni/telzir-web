@@ -29,7 +29,10 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonForm: {
     margin: theme.spacing(4,'40%'),
-    width: '20%'
+    width: '20%',
+    [theme.breakpoints.down('sm')]: {
+      width: '60%'
+    }
   },
   whatsapp: {
     position: 'sticky',
