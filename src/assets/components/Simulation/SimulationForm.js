@@ -9,7 +9,7 @@ import {
   Button
 } from '@material-ui/core';
 
-const SimulationForm = ({ next, change, values, estilo }) => {
+const SimulationForm = ({ next, getbtn, change, values, estilo }) => {
   const classes = estilo;
 
   const proximo = (e) => {
@@ -82,7 +82,7 @@ const SimulationForm = ({ next, change, values, estilo }) => {
         variant="contained"
         className={classes.buttonForm}
       >
-        Simular
+        {getbtn}
       </Button>
     </Grid>
   )

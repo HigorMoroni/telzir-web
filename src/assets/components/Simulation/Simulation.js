@@ -13,16 +13,19 @@ const Simulation = ({ estilo }) => {
   const [plano, setPlano] = useState('');
   const [comFaleMais, setComFaleMais] = useState(0);
   const [semFaleMais, setSemFaleMais] = useState(0);
+  const [textoBotaoForm, setTextoBotaoForm] = useState('Simular');
 
   const values = {dddOrigem, dddDestino, tempoLigacao, plano}
 
   const next = async () => {
+    setTextoBotaoForm('Carregando...');
     await api.post('simulation', values).then((response) => {
       const [comFaleMais, semFaleMais] = response.data;
       setSemFaleMais(semFaleMais);
       setComFaleMais(comFaleMais);
     });
-    setStep(step + 1)
+    setStep(step + 1);
+    setTextoBotaoForm('Simular');
   };
   const back = () => setStep(step - 1);
 
@@ -37,9 +40,19 @@ const Simulation = ({ estilo }) => {
   }
   switch(step) {
     case 1:
-      return <SimulationForm next={next} change={handleChange} values={values} estilo={classes} />
+      return <SimulationForm
+        next={next}
+        getbtn={textoBotaoForm}
+        change={handleChange}
+        values={values}
+        estilo={classes}
+      />
     case 2:
-      return <SimulationResult back={back} values={{...values, comFaleMais, semFaleMais}} estilo={classes} />
+      return <SimulationResult
+        back={back}
+        values={{...values, comFaleMais, semFaleMais}}
+        estilo={classes}
+      />
     default: break
   }
 }
