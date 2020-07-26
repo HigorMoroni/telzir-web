@@ -13,7 +13,7 @@ const ComboBox = ({ estilo, set }) => {
     if (!loading) return undefined;
 
     (async () => {
-      const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/regioes/3/municipios');
+      const response = await fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/SP/municipios');
       const cities = await response.json();
       if (active) {
         setOptions(cities.map(city => ({name: `${city.nome} / ${city.microrregiao.mesorregiao.UF.sigla}`})));
