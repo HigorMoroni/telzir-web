@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(4,'40%'),
     width: '20%',
     [theme.breakpoints.down('sm')]: {
-      width: '60%'
+      width: '60%',
+      margin: theme.spacing(4,'20%'),
     }
   },
   whatsapp: {
@@ -103,6 +104,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '60%',
       marginLeft: '20%'
+    }
+  },
+  formResult: {
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: '16%'
     }
   },
   footer: {
