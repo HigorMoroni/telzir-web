@@ -17,7 +17,7 @@ const Simulation = ({ estilo }) => {
   const values = {dddOrigem, dddDestino, tempoLigacao, plano}
 
   const next = async () => {
-    api.post('simulation', values).then((response) => {
+    await api.post('simulation', values).then((response) => {
       const [comFaleMais, semFaleMais] = response.data;
       setSemFaleMais(semFaleMais);
       setComFaleMais(comFaleMais);
