@@ -8,10 +8,10 @@ import {
   Grid, 
   Button,
   Collapse,
-  Alert,
   IconButton
 } from '@material-ui/core';
 import { Close as CloseIcon } from '@material-ui/icons';
+import { Alert } from '@material-ui/lab';
 
 const SimulationForm = ({ next, getbtn, change, values, estilo, alerta, textalerta, setalerta }) => {
   const classes = estilo;
