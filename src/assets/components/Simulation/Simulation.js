@@ -20,23 +20,24 @@ const Simulation = ({ estilo }) => {
   const values = {dddOrigem, dddDestino, tempoLigacao, plano}
 
   const next = async () => {
+    function formataResposta(alerta) {
+      setAlerta(alerta);
+      setTextoBotaoForm('Simular');
+    }
     setTextoBotaoForm('Carregando...');
     if (dddOrigem === '' || dddDestino === '' || tempoLigacao === '' || plano === '') {
       setTextAlerta('Não deixe nenhum campo em branco');
-      setAlerta(true);
-      setTextoBotaoForm('Simular');
+      formataResposta(true);
       return;
     }
     if (dddOrigem === dddDestino) {
       setTextAlerta('Selecione um DDD de Destino diferente do DDD de Origem');
-      setAlerta(true);
-      setTextoBotaoForm('Simular');
+      formataResposta(true);
       return;
     }
     if (dddOrigem !== '11' && dddDestino !== '11') {
       setTextAlerta('Esse tipo de ligação não é permitido');
-      setAlerta(true);
-      setTextoBotaoForm('Simular');
+      formataResposta(true);
       return;
     }
     await api.post('simulation', values).then((response) => {
@@ -45,7 +46,7 @@ const Simulation = ({ estilo }) => {
       setComFaleMais(comFaleMais);
     });
     setStep(step + 1);
-    setTextoBotaoForm('Simular');
+    formataResposta(false);
   };
   const back = () => setStep(step - 1);
 
