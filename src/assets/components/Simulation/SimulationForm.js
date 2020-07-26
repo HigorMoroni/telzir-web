@@ -23,23 +23,23 @@ const SimulationForm = ({ next, getbtn, change, values, estilo, alerta, textaler
 
   return (
     <Grid container spacing={4} className={classes.form}>
-      <Collapse in={alerta}>
-        <Alert severity="error" action={
-          <IconButton
-            aria-label="close"
-            color="inherit"
-            size="small"
-            onClick={() => {
-              setalerta(false);
-            }}
-          >
-            <CloseIcon fontSize="inherit" />
-          </IconButton>
-        }>
-          {textalerta}
-        </Alert>
-      </Collapse>
       <Grid item xs={12} >
+        <Collapse in={alerta}>
+          <Alert severity="error" action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setalerta(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }>
+            {textalerta}
+          </Alert>
+        </Collapse>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="origem">DDD de Origem</InputLabel>
           <Select

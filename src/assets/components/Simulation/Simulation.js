@@ -29,16 +29,19 @@ const Simulation = ({ estilo }) => {
     if (dddOrigem === dddDestino) {
       setTextAlerta('Selecione um DDD de Destino diferente do DDD de Origem');
       setAlerta(true);
+      setTextoBotaoForm('Simular');
       return;
     }
     if (dddOrigem !== '11' && dddDestino !== '11') {
       setTextAlerta('Esse tipo de ligação não é permitido');
       setAlerta(true);
+      setTextoBotaoForm('Simular');
       return;
     }
     if (dddOrigem === '' || dddDestino === '' || tempoLigacao === '' || plano === '') {
       setTextAlerta('Não deixe nenhum campo em branco');
       setAlerta(true);
+      setTextoBotaoForm('Simular');
       return;
     }
     setStep(step + 1);
