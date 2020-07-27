@@ -11,6 +11,8 @@ import appsImage from '../../images/apps.jpg';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const Carrossel = ({ estilo }) => {
+  const classes = estilo;
+
   const [index, setIndex] = useState(0);
   const handleChangeIndex = index => setIndex(index);
 
