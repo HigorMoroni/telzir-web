@@ -130,7 +130,10 @@ const useStyles = makeStyles((theme) => ({
   },
   socialIcon: {
     margin: theme.spacing(2, 4, 0, 4),
-    color: '#0D3858'
+    color: '#0D3858',
+    [theme.breakpoints.down('sm')]: {
+      margin: theme.spacing(1, 1, 0, 1),
+    },
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
