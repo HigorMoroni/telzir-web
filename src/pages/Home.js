@@ -5,6 +5,7 @@ import Menu from '../assets/components/Menu';
 import Cards from '../assets/components/Cards';
 import Simulation from '../assets/components/Simulation/Simulation';
 import WhatsAppButton from '../assets/components/WhatssAppButton';
+import Carrossel from '../assets/components/Carrossel/Carrossel';
 
 import useStyles from '../assets/styles/useStyles';
 
