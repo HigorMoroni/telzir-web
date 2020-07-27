@@ -21,17 +21,19 @@ const Menu = ({estilo}) => {
     <AppBar position="fixed" color="default" elevation={0} className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-          <img src={Logo} alt="Telzir" className={classes.logoImage}/> 
+          <Link href="#">
+            <img src={Logo} alt="Telzir" className={classes.logoImage}/>
+          </Link> 
         </Typography>
         <nav className={classes.navLinks}>
-          <Link variant="button" color="textPrimary" href="#um" className={classes.link}>
-            Features
+          <Link variant="button" color="textPrimary" href="#novidades" className={classes.link}>
+            Novidades
           </Link>
           <Link variant="button" color="textPrimary" href="#falemais" className={classes.link}>
             FaleMais
           </Link>
-          <Link variant="button" color="textPrimary" href="#tres" className={classes.link}>
-            Support
+          <Link variant="button" color="textPrimary" href="#contato" className={classes.link}>
+            Contato
           </Link>
         </nav>
         <LinkRoute to="/localidade">

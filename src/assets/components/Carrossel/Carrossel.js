@@ -17,25 +17,34 @@ const Carrossel = ({ estilo }) => {
   const handleChangeIndex = index => setIndex(index);
 
   return (
-    <Box>
-      <AutoPlaySwipeableViews index={index} onChangeIndex={handleChangeIndex}>
-      <img
+    <Box id="novidades">
+      <AutoPlaySwipeableViews
+        index={index}
+        onChangeIndex={handleChangeIndex}
+        interval={6000}
+      >
+      <a href="#5g"><img
         className={classes.banner}
         src={cincoG}
         alt="5G"
-      />
-      <img
+      /></a>
+      <a href="#falemais"><img
         className={classes.banner}
         src={ligacao}
         alt="FaleMais"
-      />
-      <img
+      /></a>
+      <a href="#apps"><img
         className={classes.banner}
         src={appsImage}
         alt="apps"
-      />
+      /></a>
       </AutoPlaySwipeableViews>
-      <Pagination dots={3} index={index} onChangeIndex={handleChangeIndex} />
+      <Pagination
+        dots={3}
+        index={index}
+        onChangeIndex={handleChangeIndex}
+        estilo={{ ...classes }}
+      />
     </Box>
   );
 }

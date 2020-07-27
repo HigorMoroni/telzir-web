@@ -6,6 +6,7 @@ import Cards from '../assets/components/Cards';
 import Simulation from '../assets/components/Simulation/Simulation';
 import WhatsAppButton from '../assets/components/WhatssAppButton';
 import Carrossel from '../assets/components/Carrossel/Carrossel';
+import Footer from '../assets/components/Footer';
 
 import useStyles from '../assets/styles/useStyles';
 
@@ -18,9 +19,6 @@ const Home = () => {
       <CssBaseline />
       <Menu estilo={{ ...classes }}/>
       <Carrossel estilo={{ ...classes }}/>
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        TEXTO
-      </Container>
       <Container id="falemais" maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography align="center">
           <img src={Logo} alt="Telzir" style={{width: '75%'}}/>
@@ -66,6 +64,7 @@ const Home = () => {
           </CardContent>
         </Card>
       </Container>
+      <Footer estilo={{ ...classes }} />
       <WhatsAppButton estilo={{ ...classes }} />
     </React.Fragment>
   );

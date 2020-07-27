@@ -76,14 +76,26 @@ const useStyles = makeStyles((theme) => ({
   },
   banner: {
     width: '100%',
-    height: '100hv',
-    marginTop: '70px',
+    [theme.breakpoints.up('md')]: {
+      height: 'calc(100vh - 70px)',
+      marginTop: '70px',
+    },
     [theme.breakpoints.down('sm')]: {
       marginTop: '105px'
     },
     [theme.breakpoints.down('xs')]: {
       marginTop: '130px'
     }
+  },
+  paginacao: {
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    display: 'flex',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+    flexDirection: 'row',
   },
   heroContent: {
     padding: theme.spacing(8, 0, 6),
@@ -111,6 +123,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       marginLeft: '16%'
     }
+  },
+  logoForm: {
+    width: '60%',
+    maxWidth: 180
+  },
+  socialIcon: {
+    margin: theme.spacing(2, 4, 0, 4),
+    color: '#0D3858'
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,

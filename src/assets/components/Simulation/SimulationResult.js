@@ -11,6 +11,8 @@ import {
   TableBody
 } from '@material-ui/core';
 
+import falemais from '../../images/falemais-logo.png';
+
 const SimulationResult = ({ back, values, estilo }) => {
   const classes = estilo;
 
@@ -63,12 +65,22 @@ const SimulationResult = ({ back, values, estilo }) => {
                 <TableCell align="right">FaleMais {values.plano}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell component="th" scope="row">Com FaleMais: </TableCell>
-                <TableCell align="right">{values.comFaleMais}</TableCell>
+                <TableCell component="th" scope="row">
+                  <img src={falemais} alt="FaleMais" className={classes.logoForm}/>
+                </TableCell>
+                <TableCell
+                  align="right"
+                  style={{
+                    fontWeight: 'bold',
+                    fontSize: 18
+                  }}
+                >
+                  R$ {(values.comFaleMais.toFixed(2)).replace('.',',')}
+                </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell component="th" scope="row">Sem FaleMais: </TableCell>
-                <TableCell align="right">{values.semFaleMais}</TableCell>
+                <TableCell align="right">R$ {(values.semFaleMais.toFixed(2)).replace('.',',')}</TableCell>
               </TableRow>
             </TableBody>
           </Table>
