@@ -76,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
   banner: {
     width: '100%',
+    height: '100hv',
     marginTop: '70px',
     [theme.breakpoints.down('sm')]: {
       marginTop: '105px'
