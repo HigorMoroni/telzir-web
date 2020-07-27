@@ -8,7 +8,6 @@ import WhatsAppButton from '../assets/components/WhatssAppButton';
 
 import useStyles from '../assets/styles/useStyles';
 
-import cincoG from '../assets/images/5G.jpg';
 import Logo from '../assets/images/falemais-logo.png';
 
 const Home = () => {
@@ -17,11 +16,7 @@ const Home = () => {
     <React.Fragment>
       <CssBaseline />
       <Menu estilo={{ ...classes }}/>
-      <img
-        className={classes.banner}
-        src={cincoG}
-        alt="5G"
-      />
+      <Carrossel estilo={{ ...classes }}/>
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
         TEXTO
       </Container>
