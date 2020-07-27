@@ -6,7 +6,7 @@ import { Box } from '@material-ui/core';
 
 import cincoG from '../../images/5G.jpg';
 import ligacao from '../../images/ligacao.jpg';
-import appsImage from '../../images/apps';
+import appsImage from '../../images/apps.jpg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
