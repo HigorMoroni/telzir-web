@@ -5,6 +5,10 @@ Esse projeto consiste em uma aplicação web da empresa ficticia Telzir Telecom 
 
 <img src="./screens/desktop.png" alt="FaleMais" height="400"> <img src="./screens/mobile.jpg" alt="FaleMais" height="400">
 
+# Outros Repositórios
+
+#### <a href="https://github.com/HigorMoroni/telzir-server">Api Back-end</a>
+
 ## Construido com
 
 Construido com :yellow_heart: usando as tecnologias:
@@ -52,18 +56,18 @@ Para download: acesse o [site oficial](https://nodejs.org/en/) do Node.js e siga
 
 Com o Node.js e NPM instalados corretamente, abra o seu terminal na pasta do projeto e  execute os seguintes comandos:
 
-Acesse a pasta server:
+Acesse a pasta do repositório server:
 ```sh
-cd server
+cd telzir-server
 ```
 Inicie o servidor:
 ```sh
 npm start
 ```
 Em outro Terminal, execulte o que segue.
-Acesse a pasta web:
+Acesse a pasta desse repositório web:
 ```sh
-cd web
+cd telzir-web
 ```
 Inicie o serviço web:
 ```sh
@@ -72,9 +76,9 @@ npm start
 
 ## Executar restes automatizados
 
-Em outro terminal dentro da pasta do projeto acesse a pasta server:
+Em outro terminal acesse a pasta do repositório server:
 ```sh
-cd server
+cd telzir-server
 ```
 Execute o seguinte comando para rodar os testes:
 ```sh
