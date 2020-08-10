@@ -1,68 +1,133 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Projeto Telzir Telecom
+> Esse projeto faz parte do "Show me the code", processo seletivo da Vizir Software Studio.
 
-## Available Scripts
+Esse projeto consiste em uma aplicação web da empresa ficticia Telzir Telecom que permite ao publico conhecer, consultar e simular as caracteristicas e principalmente o custo de ligações de longa distância utilizando o novo plano FaleMais da Telzir.
 
-In the project directory, you can run:
+<img src="./screens/desktop.png" alt="FaleMais" height="400"> <img src="./screens/mobile.jpg" alt="FaleMais" height="400">
 
-### `yarn start`
+## Construido com
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Construido com :yellow_heart: usando as tecnologias:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Front-end
+- ReactJS,
+- JSS,
+- Material-UI,
+- Axios
 
-### `yarn test`
+#### Back-end
+- Node.js,
+- Express,
+- Cors
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Testes
+- Jest
 
-### `yarn build`
+#### Deploy
+- Github
+- Vercel
+- Heroku
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Executar a Aplicação
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Live Version:
+Você pode rodar nossa versão em nuvem em qualquer dispositivo com acesso a internet clicando [aqui](https://telzir.vercel.app/).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Local Host:
+Também é possível rodar essa aplicação localmente em um computador ou notebook, para isso é necessário ter alguns programas instalados:
 
-### `yarn eject`
+#### Node.js e NPM
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+É necessário instalar o node e npm(ou yarn) para rodar essa aplicação localmente. Para verificar se já tem instalado, execulte em seu terminal os seguintes comandos:
+```sh
+node -v
+```
+```sh
+npm -v
+```
+Caso o retorno de algum dos dois comandos sejam um erro, é necessário instalar o Node.js e o NPM.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Guias para download e instalação do Node.js e NPM:
+Para download: acesse o [site oficial](https://nodejs.org/en/) do Node.js e siga o passo a passo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Com o Node.js e NPM instalados corretamente, abra o seu terminal na pasta do projeto e  execute os seguintes comandos:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Acesse a pasta server:
+```sh
+cd server
+```
+Inicie o servidor:
+```sh
+npm start
+```
+Em outro Terminal, execulte o que segue.
+Acesse a pasta web:
+```sh
+cd web
+```
+Inicie o serviço web:
+```sh
+npm start
+```
 
-## Learn More
+## Executar restes automatizados
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Em outro terminal dentro da pasta do projeto acesse a pasta server:
+```sh
+cd server
+```
+Execute o seguinte comando para rodar os testes:
+```sh
+npm test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+O resultado esperado é concluir os quatro testes com sucesso.
 
-### Code Splitting
+![](./screens/testes.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Após executar esses comandos, caso tudo esteja correto, o servidor back-end estará rodando em http://localhost:3333 e o servidor front-end estará rodando em http://localhost:3000.
 
-### Analyzing the Bundle Size
+## Exemplo de uso
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Informe sua localidade
+Inicialmente o sistema pedirá que informe sua localidade, basta digitar ou selecionar uma das opções de cidade na área de coberturar que se encontra no campo de texto e clicar em `Salvar Meu Local`.
 
-### Making a Progressive Web App
+![](./screens/localidade.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Simulando o custo das ligações com o FaleMais
+#### Informando os dados
+Role a página até chegar em 'Simulador FaleMais Telzir', ou clique no link 'FaleMais' que se encontra no menu superior.
+Para utilizar essa funcionalidade basta preencher os campos do formulário escolhendo o DDD de origem e o DDD de destino; digitando a duração da ligação (em minutos) e selecionando um dos planos disponiveis.
+Em seguida clique em `SIMULAR` e aguarde a resposta ser carregada.
 
-### Advanced Configuration
+<img src="./screens/formulario.gif" alt="FaleMais" height="500">
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+#### Consultando a resposta
+Após o carregamento, será exibida automaticamente uma tabela contendo os resultados da simulação e o percentual de vantagem em adiquirir o novo plano FaleMais da Telzir.
 
-### Deployment
+<img src="./screens/resultado.png" alt="FaleMais" height="500">
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+#### Refazendo a simulação
+Para fazer uma nova consulta não é necessário recarregar ou atualizar a página, basta clicar no botão `REFAZER` que você será redirecionado de volta  ao formulário já preenchido com os dados adicionados anteriormente, basta corrigir os valores e clicar novamente em `SIMULAR`.
 
-### `yarn build` fails to minify
+------------
+#### Importante!
+No formulário de simulação não é permitido:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ `1 - Deixar qualquer campo em branco,`
+ `2 - Utilizar o mesmo DDD para Origem e Destino`
+ `3 - Não utilizar o DDD '11' nem para origem, nem para destino.`
+
+Caso isso ocorra, você receberá um alerta de erro como esse:
+
+![](./screens/alerta.png)
+
+Basta seguir os requisitos corretamente para ter sucesso na simulação.
+
+------------
+
+## Entre em contato comigo
+
+Higor Moroni – [WhatsApp](https://api.whatsapp.com/send?phone=5513988685814) – moroni@higor.tech
+
+[Github](https://github.com/HigorMoroni/) - [Linkedin](https://www.linkedin.com/in/higormoroni/) - [Portfólio](https://higor.tech).
