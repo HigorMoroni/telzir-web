@@ -132,6 +132,6 @@ Basta seguir os requisitos corretamente para ter sucesso na simulação.
 
 ## Entre em contato comigo
 
-Higor Moroni – [WhatsApp](https://api.whatsapp.com/send?phone=5513988685814) – moroni@higor.tech
+Higor Moroni – [WhatsApp](https://api.whatsapp.com/send?phone=5513988685814) – moroni@higor.dev
 
-[Github](https://github.com/HigorMoroni/) - [Linkedin](https://www.linkedin.com/in/higormoroni/) - [Portfólio](https://higor.tech).
+[Github](https://github.com/HigorMoroni/) - [Linkedin](https://www.linkedin.com/in/higormoroni/) - [Portfólio](https://higor.dev).
